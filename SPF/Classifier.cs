@@ -114,7 +114,7 @@ namespace SPF
             array = null;
             switch (param)
             {
-         /*       case ImageVector.ImageParameters.averageGrayLevel:
+                case ImageVector.ImageParameters.averageGrayLevel:
                     array = AVERAGE_GRAY_LEVEL_BOUNDS;
                     break;
               case ImageVector.ImageParameters.averageGreenLevel:
@@ -123,13 +123,13 @@ namespace SPF
                 case ImageVector.ImageParameters.averageRedLevel:
                     array = AVERAGE_RED_LEVEL_BOUNDS;
                     break;
-       */         case ImageVector.ImageParameters.averageBlueLevel:
+                case ImageVector.ImageParameters.averageBlueLevel:
                     array = AVERAGE_BLUE_LEVEL_BOUNDS;
                     break;
-        /*      case ImageVector.ImageParameters.averageHueLevel:
+              case ImageVector.ImageParameters.averageHueLevel:
                     array = AVERAGE_HUE_LEVEL_BOUNDS;
                     break;
-          */     case ImageVector.ImageParameters.averageSaturationLevel:
+               case ImageVector.ImageParameters.averageSaturationLevel:
                     array = AVERAGE_SATURATION_LEVEL_BOUNDS;
                     break;
                 case ImageVector.ImageParameters.numOfPoeple:
@@ -138,28 +138,28 @@ namespace SPF
                         case ImageVector.ImageParameters.edges:
                                array = EDGES_BOUNDS;
                                break;
-                         /*               case ImageVector.ImageParameters.redEye:
+                                        case ImageVector.ImageParameters.redEye:
                                            array = RED_EYE_BOUNDS;
                                            break;
                                        case ImageVector.ImageParameters.distanceFromGravityCenter:
                                            array = DISTANCE_FROM_COG_BOUNDS;
                                            break;
-                                */       case ImageVector.ImageParameters.facesImageAreaRatio:
+                                       case ImageVector.ImageParameters.facesImageAreaRatio:
                                            array = IMAGE_FACES_AREA_RATIO_BOUNDS;
                                            break;
                                       case ImageVector.ImageParameters.facesCenterOfGravityX:
                                            array = CENTER_OF_GRAVITY_BOUNDS;
                                            break;
-                             /*          case ImageVector.ImageParameters.facesCenterOfGravityY:
+                                      case ImageVector.ImageParameters.facesCenterOfGravityY:
                                            array = CENTER_OF_GRAVITY_BOUNDS;
                                            break;
-                              */         case ImageVector.ImageParameters.variance:
+                                      case ImageVector.ImageParameters.variance:
                     array = VARIANCE_BOUNDS;
                     break;
-         /*       case ImageVector.ImageParameters.imageInformation:
+                case ImageVector.ImageParameters.imageInformation:
                     array = IMAGE_INFORMATION_BOUNDS;
                     break;
-           */     default:
+                default:
                     throw (new Exception("Classification for " + param.ToString() + " is not implemented"));
             }
         }
