@@ -333,11 +333,11 @@ namespace SPF
             lowest = 1 - goodPercent;
             lowest -= 0.10;
             bool quit = false;
-            for (double percent = 0.6; percent < 0.7; percent += 0.1)
+            for (double percent = 0.1; percent < 0.2; percent += 0.1)
             {
                 int p = (int)(percent * 100);
 
-                for (int i = 1; i <= 10; i++)
+                for (int i = 1; i <= 1; i++)
                 {
 
                     Console.WriteLine("Percent = " + percent + ",Iteration =  " + i + ", Time: " + string.Format("{0:HH:mm:ss tt}", DateTime.Now));
@@ -382,9 +382,9 @@ namespace SPF
 
                 //**********calculate the most importent attributes***********//
 
-              //  bestTest = new int[] { 0, 5, 10, 7, 13  }; //calcBestAttribute(goodImages, badImages);// 
+                bestTest = calcBestAttribute(goodImages, badImages);// 
                 //  createFileForAttributePic(goodImages, badImages, bestTest);
-               // Internal_KNN_SVM_Test(goodImages, badImages, bestTest);
+                Internal_KNN_SVM_Test(goodImages, badImages, bestTest);
 
                 //********************************//
 
@@ -468,7 +468,13 @@ namespace SPF
                     bfs.setBest(attributeTest);
                 isCVT = true;
                 bfs.addOpen(attributeTest);
+                //bfs.calcNeighbors(attributeTest);//,goodImages,badImages);
+
+
                
+
+                // starting to test new percent so reset all the data to zero
+                //learningAlgo.restartTest();
 
             }
         }
@@ -502,6 +508,7 @@ namespace SPF
                 {
                     double sigma = Math.Pow(2, i);
                     double gamma = Math.Pow(2, j);
+                    //learningAlgo = new SVM(userPath, i, 1, SVM.Kernel.SVM_POLY, goodImages, badImages);
                     learningAlgo = new SVM_Matlab(userPath, sigma, 1, SVM_Matlab.Kernel.SVM_RBF, goodImages, badImages);
                     crossValidation(goodImages, badImages);
                 }
@@ -522,14 +529,14 @@ namespace SPF
                     double sigma = Math.Pow(2, i);
                     double gamma = Math.Pow(2, j);
                     learningAlgo = new KNN_SVM(userPath, sigma, gamma, KNN_SVM.Kernel.SVM_RBF, k, goodImages, badImages);
-                 //   if (!isTest)
-                  //  {  
+                    if (!isTest)
+                    {  
                             crossValidation(goodImages, badImages);
-                       
+                      
                 
-                    //}
-                    //else
-                      //  crossValidation_second(goodImages, badImages);
+                    }
+                    else
+                        crossValidation_second(goodImages, badImages);
                 }
             }
         }

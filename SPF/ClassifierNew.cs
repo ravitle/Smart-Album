@@ -707,35 +707,35 @@ namespace SPF
         {
             switch (index)
             {
-             /*   case 0:
+                case 0:
                    return ImageVector.ImageParameters.averageGrayLevel;
-               */ case 0:
-                   return ImageVector.ImageParameters.numOfPoeple;
                 case 1:
-                    return ImageVector.ImageParameters.edges;
+                   return ImageVector.ImageParameters.numOfPoeple;
                 case 2:
+                    return ImageVector.ImageParameters.edges;
+                case 3:
                     return ImageVector.ImageParameters.facesCenterOfGravityX;
-          /*      case 4:
+                case 4:
                     return ImageVector.ImageParameters.facesCenterOfGravityY;
-            */    case 3:
+                case 5:
                     return ImageVector.ImageParameters.facesImageAreaRatio;
-             /*   case 6:
+                case 6:
                     return ImageVector.ImageParameters.averageRedLevel;
-              */  case 4:
+                case 7:
                     return ImageVector.ImageParameters.averageBlueLevel;
-             /*   case 8:
+                case 8:
                     return ImageVector.ImageParameters.averageGreenLevel;
                 case 9:
                     return ImageVector.ImageParameters.averageHueLevel;
-              */  case 5:
+                case 10:
                     return ImageVector.ImageParameters.averageSaturationLevel;
-            /*    case 11:
+                case 11:
                     return ImageVector.ImageParameters.distanceFromGravityCenter;
                 case 12:
                     return ImageVector.ImageParameters.imageInformation;
-              */  case 6:
+                case 13:
                     return ImageVector.ImageParameters.variance;
-             /*   case 14:
+                case 14:
                     return ImageVector.ImageParameters.redEye;
                 case 15:
                     return ImageVector.ImageParameters.stdBlur; //!!!!!!!!
@@ -745,7 +745,7 @@ namespace SPF
                     return ImageVector.ImageParameters.closedEye;//!!!!!!!
                 case 18:
                     return ImageVector.ImageParameters.numOfSmiles; //!!!!!!!!
-               */ default:
+                default:
                     throw (new Exception("Parameter " + index + " does not exist."));
             }
         }
@@ -757,7 +757,7 @@ namespace SPF
             array = null;
             switch (param)
             {
-             /*   case ImageVector.ImageParameters.averageGrayLevel:
+                case ImageVector.ImageParameters.averageGrayLevel:
                     array = AVERAGE_GRAY_LEVEL_BOUNDS;
                     break;
                 case ImageVector.ImageParameters.averageGreenLevel:
@@ -766,13 +766,13 @@ namespace SPF
                 case ImageVector.ImageParameters.averageRedLevel:
                     array = AVERAGE_RED_LEVEL_BOUNDS;
                     break;
-            */    case ImageVector.ImageParameters.averageBlueLevel:
+                case ImageVector.ImageParameters.averageBlueLevel:
                     array = AVERAGE_BLUE_LEVEL_BOUNDS;
                     break;
-             /*   case ImageVector.ImageParameters.averageHueLevel:
+                case ImageVector.ImageParameters.averageHueLevel:
                     array = AVERAGE_HUE_LEVEL_BOUNDS;
                     break;
-              */  case ImageVector.ImageParameters.averageSaturationLevel:
+                case ImageVector.ImageParameters.averageSaturationLevel:
                     array = AVERAGE_SATURATION_LEVEL_BOUNDS;
                     break;
                 case ImageVector.ImageParameters.numOfPoeple:
@@ -781,25 +781,25 @@ namespace SPF
                 case ImageVector.ImageParameters.edges:
                     array = EDGES_BOUNDS;
                     break;
-           /*    case ImageVector.ImageParameters.redEye:
+               case ImageVector.ImageParameters.redEye:
                     array = RED_EYE_BOUNDS;
                     break;
                 case ImageVector.ImageParameters.distanceFromGravityCenter:
                     array = DISTANCE_FROM_COG_BOUNDS;
                     break;
-              */  case ImageVector.ImageParameters.facesImageAreaRatio:
+                case ImageVector.ImageParameters.facesImageAreaRatio:
                     array = IMAGE_FACES_AREA_RATIO_BOUNDS;
                     break;
                 case ImageVector.ImageParameters.facesCenterOfGravityX:
                     array = CENTER_OF_GRAVITY_BOUNDS;
                     break;
-             /*   case ImageVector.ImageParameters.facesCenterOfGravityY:
+                case ImageVector.ImageParameters.facesCenterOfGravityY:
                     array = CENTER_OF_GRAVITY_BOUNDS;
                     break;
-              */  case ImageVector.ImageParameters.variance:
+                case ImageVector.ImageParameters.variance:
                     array = VARIANCE_BOUNDS;
                     break;
-             /*   case ImageVector.ImageParameters.imageInformation:
+                case ImageVector.ImageParameters.imageInformation:
                     array = IMAGE_INFORMATION_BOUNDS;
                     break;
                 case ImageVector.ImageParameters.stdBlur:
@@ -814,7 +814,7 @@ namespace SPF
                 case ImageVector.ImageParameters.numOfSmiles: //!!!!!!!
                     array = NUM_OF_SMILES_BOUNDS;
                     break;
-               */ default:
+                default:
                     throw (new Exception("Classification for " + param.ToString() + " is not implemented"));
             }
         }
